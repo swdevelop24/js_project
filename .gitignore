@@ -1,4 +1,4 @@
-package.json
-js/keys.js
 .env
-config.json
+package.json
+package-lock.json
+node_modules
