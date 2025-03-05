@@ -39,16 +39,16 @@
     text-align: center;
     height: 1em;
   }
-  .favorite2, .favorite {
+  .favorite {
     text-decoration: none;
-    color: rgba(4, 193, 4, 0.682); 
+    color: rgba(106, 223, 106, 0.682); 
     font-size: 16px;
     font-weight: bold;
     display: flex;
     align-items: right; /* 아이콘과 텍스트 수평 맞춤 */
 }
 
-  .favorite2 i, .favorite i {
+  .favorite i {
       margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 조정 */
   }
 
@@ -65,7 +65,7 @@
   .favorite:hover, .favorite2:hover{
     color: #ffea00; 
     font-size: 120%;
-    font-weight: bold;
+    font-weight: 800;
   }
 
   .sriracha-regular {
@@ -173,10 +173,10 @@ footer {
       align-items: center; 
     }
 
-    .favorite2, .favorite {
+    .favorite {
       font-size: 15px; 
       font-weight: bold;
-      color: rgba(119, 248, 32, 0.629);
+      color: sriracha-regular
     }
    } 
 
