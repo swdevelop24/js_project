@@ -1,0 +1,200 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+    margin: 0;  
+    padding: 0;
+  }
+
+  main {
+    flex: 1; /* 메인 영역이 남은 공간을 차지하도록 설정 */
+    overflow-y: auto; /* 메인 영역이 스크롤 되도록 설정 */
+    padding-bottom: 100px; /* 스크롤 시 footer가 겹치지 않도록 여백 추가 */
+    background-color: #333;
+}
+  
+ 
+  .title-style {
+    position: relative;
+    height: 9em;
+    background-image: url('https://i.pinimg.com/736x/cb/a9/89/cba989cb8d3540972f1a6bbe24d5680b.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .park-home {
+    color: rgb(15, 48, 26);
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.8em;
+    margin-top: 12px;
+  }
+
+  .park-home-second {
+    text-align: center;
+    height: 1em;
+  }
+  .favorite2, .favorite {
+    text-decoration: none;
+    color: rgba(4, 193, 4, 0.682); 
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: right; /* 아이콘과 텍스트 수평 맞춤 */
+}
+
+  .favorite2 i, .favorite i {
+      margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 조정 */
+  }
+
+  .favorite-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 1em;
+    position: absolute;
+    bottom: 0.2em;
+    right: 0em;
+    font-weight: bold;
+  }
+
+  .favorite:hover, .favorite2:hover{
+    color: #ffea00; 
+    font-size: 120%;
+    font-weight: bold;
+  }
+
+  .sriracha-regular {
+    font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #0b0b0bd8;
+  color: white;
+  text-align: center;
+  position: relative; /* 필요한 경우 fixed로 변경 가능 */
+}
+
+/* 추가적인 스타일 */
+.footer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-style a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-style a:hover {
+  font-size: 180%;
+  color: green;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-text-top a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+/* 하단 푸터가 항상 보이도록 설정 */
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+  .footer-text {
+    text-align: center; 
+    font-size: 14px;
+    color: rgb(172, 219, 187);
+    padding: 10px 0;
+    }
+
+    .footer-text-top {
+        display: inline-block;
+    }
+
+    .footer-text-bottom {
+        display: inline-block;
+    }
+
+  
+  .address-style {
+    color: #cb1717a8; 
+    text-decoration: none;
+  }
+  .address-style:hover {
+    text-decoration: underline; 
+  }
+
+  /* Media */
+  @media (max-width: 992px){ 
+    .park-home {
+        font-size: 2.5em;
+    }
+ 
+    .favorite{
+        font-size: 80%;
+    }
+    
+    .favorite:hover{
+        font-size: 90%;
+    }
+
+    .navbar-toggler {
+        display: block; 
+    }
+
+    .navbar {
+       height: 4em; 
+    }
+
+    .favorite-container {
+      left: 50%; /* 화면 중앙에 배치 */
+      transform: translateX(-50%); /* 정확히 중앙 정렬 */
+      justify-content: center; 
+      align-items: center; 
+    }
+
+    .favorite2, .favorite {
+      font-size: 15px; 
+      font-weight: bold;
+      color: rgba(119, 248, 32, 0.629);
+    }
+   } 
+
+   @media (max-width: 768px) {
+    .footer-text-top, .footer-text-bottom {
+        display: block; 
+    }
+    }
+
+   @media (max-width: 450px){
+    .footer-text-bottom {
+        display: none;
+    }
+
+    .footer-text-top{
+        margin-bottom: 2em;
+    }
+  }
+
+
+  

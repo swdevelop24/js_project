@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Details</title>
+    <link rel="stylesheet" href="../styles/3_detail.css">
+</head>
+<body>
+
+
+    <nav class="title-style"> 
+        <div class="park-home sriracha-regular">  Explore the Wild </div>
+        <div class="park-home-second sriracha-regular"> A Journey Through National Parks</div>
+        <div class="favorite-container"> 
+            <div> <a href="#" class="favorite2"><i class="fa-solid fa-house"></i>  Main </a></div>
+            <div> <a href="#" class="favorite2"><i class="fa-solid fa-newspaper"></i>  News </a></div>
+            <div> <a href="#" class="favorite"> <i class="fa-solid fa-star"></i> Favorite </a> </div>
+        </div>  
+</nav>
+
+
+
+<main>
+
+
+    <div class="container">
+        <h1 id="parkName" class="text-center"></h1>
+        <img id="parkImage" src="" alt="Park Image" class="park-img">
+        <p id="parkDescription"></p>
+
+        <h3>Activities</h3>
+        <ul id="activityList"></ul>
+
+        <h3>Amenities</h3>
+        <ul id="amenityList"></ul>
+
+        <h3>Popular Places</h3>
+        <ul id="placeList"></ul>
+
+        <h3>Location</h3>
+        <a id="mapLink" href="#" target="_blank">View on Google Maps</a>
+
+        <br>
+        <a href="#" class="btn-primary" onclick="goBack()">⬅ Back</a>
+    </div>
+</main>
+<footer>
+    <div class="footer-flex">
+        <div class="footer-style">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="footer-text">
+        <div class="footer-text-top">
+            @2025 <a href="https://www.exploretheworld.com" target="_blank" class="address-style">exploretheworld.com</a>
+        </div>
+        <div class="footer-text-bottom">
+            All trademarks are owned by exploretheworld., or used with permission
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="../js/3_detail.js"></script>
+</body>
+</html>
