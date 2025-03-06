@@ -8,9 +8,9 @@ const getParkInfo = async () => {
     const data = await response.json();
 
     newsList = data.data;
-    filteredNewsList = newsList; // Initially, show all news
-    populateStateFilter(); // 필터 창을 채움
-    render(); // 렌더링 호출
+    filteredNewsList = newsList;
+    populateStateFilter();
+    render(); 
     console.log(newsList);
 };
 
@@ -39,10 +39,10 @@ const render = () => {
         // Format the releaseDate to show as "YYYY-MM-DD HH:MM"
         const releaseDate = new Date(news.releaseDate);
         const year = releaseDate.getFullYear();
-        const month = (releaseDate.getMonth() + 1).toString().padStart(2, '0'); // Get month (MM)
-        const day = releaseDate.getDate().toString().padStart(2, '0'); // Get day (DD)
-        const hours = releaseDate.getHours().toString().padStart(2, '0'); // Get hours (HH)
-        const minutes = releaseDate.getMinutes().toString().padStart(2, '0'); // Get minutes (MM)
+        const month = (releaseDate.getMonth() + 1).toString().padStart(2, '0'); 
+        const day = releaseDate.getDate().toString().padStart(2, '0'); 
+        const hours = releaseDate.getHours().toString().padStart(2, '0'); 
+        const minutes = releaseDate.getMinutes().toString().padStart(2, '0'); 
         
         const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`; // Format as "YYYY-MM-DD HH:MM"
 
@@ -86,10 +86,10 @@ const handleStateFilterChange = (event) => {
 
 // 검색 기능: 필터링과 검색이 동시에 가능
 const filterNews = () => {
-    const selectedState = document.getElementById("stateFilter") ? document.getElementById("stateFilter").value : '';  // select 요소가 없다면 빈 값으로 처리
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();  // trim()을 사용하여 앞뒤 공백 제거
+    const selectedState = document.getElementById("stateFilter") ? document.getElementById("stateFilter").value : '';  
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();  
 
-    console.log("Search term:", searchTerm); // 입력된 검색어 확인
+    console.log("Search term:", searchTerm);
 
     filteredNewsList = newsList.filter(news => {
         const matchesState = selectedState ? news.relatedParks[0].states === selectedState : true;

@@ -135,13 +135,13 @@ body {
 }
 
 .nav-container {
-  position: relative; /* 상대적 위치 지정 */
-  border-bottom: 3px solid rgba(168, 184, 76, 0.8); /* 네브밑 밑줄 추가 */
+  position: relative; 
+  border-bottom: 3px solid rgba(168, 184, 76, 0.8);
   color: green;
   min-height: 20%;
   font-size: 1em;
   display: flex;
-  justify-content: space-between; /* 네비게이션 아이템을 양 옆으로 정렬 */
+  justify-content: space-between; 
   align-items: center;
   padding: 10px;
 }
@@ -200,18 +200,16 @@ body {
 
 
 .news {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* 볼록한 그림자 */
-  border-radius: 10px;  /* 둥근 모서리 */
-  overflow: hidden;  /* 내용이 카드 밖으로 나가지 않게 */
-  background-color: #ffffff;  /* 카드 배경색 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  /* 부드러운 애니메이션 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+  border-radius: 10px; 
+  background-color: #ffffff; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
   margin-bottom: 1em;
 }
 
-/* 호버 시 크기 확대 및 그림자 효과 */
 .news:hover {
-  transform: translateY(-5px);  /* 카드가 살짝 떠오르는 효과 */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* 더 강조된 그림자 */
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .news-image-size {
@@ -222,15 +220,14 @@ body {
 
 /* 뉴스 카드 이미지 스타일 */
 .news-image {
-  width: 100%;  /* 부모 요소의 크기에 맞춰서 이미지 크기 조정 */
+  width: 100%;  
   height: 100%;
-  object-fit: cover;  /* 이미지를 부모 요소에 맞게 잘라서 표시 */
-  display: block;  /* inline-block으로 처리되는 img 요소를 block으로 변경하여 여백 제거 */
-  margin: 0;  /* 이미지에 margin 없애기 */
-  padding: 0;  /* 이미지에 padding 없애기 */
+  object-fit: cover;  
+  display: block;  
+  margin: 0;  
+  padding: 0;  
 }
 
-/* 뉴스 카드 이미지의 부모 요소 스타일 (image wrapper) */
 .news .news-image-container {
   padding: 0;
   margin: 0;
@@ -261,32 +258,6 @@ body {
 
 .news-content {
   margin-top: 1em;
-}
-
-/* 페이지네이션 */
-/* 페이지네이션 스타일 */
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination-container button {
-  padding: 10px;
-  margin: 0 5px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
-}
-
-.pagination-container button.active {
-  background-color: #006400;
-  color: white;
-}
-
-.pagination-container button:hover {
-  background-color: #006400;
-  color: white;
 }
 
 /*Footer*/
