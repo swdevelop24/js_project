@@ -1,0 +1,219 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+  margin: 0;  
+}
+
+main {
+  flex-grow: 1;  /* 이 부분이 화면에서 남은 공간을 채우도록 함 */
+}
+
+
+.title-style {
+  position: relative;
+}
+
+.furever-home {
+  color: rgb(76, 62, 62);
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 2.5em;
+}
+
+.favorite {
+  font-size: 17px;
+  font-weight: bold;
+  position: absolute;
+  right: 1em; 
+  bottom: 0; 
+  color: rgb(76, 62, 62);
+  text-decoration: none;
+}
+
+.favorite:hover {
+  color: #ff5733; 
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.sriracha-regular {
+  font-family: "Sriracha", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* 네비게이션 스타일 */
+.nav-style {
+  background-color: white !important;
+  border-top: 1px solid #b2a8a8; 
+  border-bottom: 1px solid #b2a8a8; 
+  height: 4em;
+}
+
+.navbar-style {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-style a {
+  font-size: 18px;
+  margin-right: 2em;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff5733; 
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/* 사이드 메뉴 스타일 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;  /* 메뉴를 화면 밖에 숨김 */
+  height: 100%;
+  width: 250px;
+  background-color:#2f232364; 
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  padding-top: 4.5em; /* 상단 여백 추가 */
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.side-menu a:hover {
+  background-color: #575757;
+}
+
+.side-menu.active {
+  left: 0;  /* 메뉴가 보이도록 왼쪽 위치를 조정 */
+}
+
+/* 닫기 버튼 스타일 */
+.close-btn {
+  position: absolute;
+  top: 20px; 
+  right: 20px;  
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1050; /* 닫기 버튼을 항상 다른 내용 위로 */
+}
+
+
+/* 햄버거 버튼 */
+.navbar-toggler {
+  background-color: white;
+  border: none;
+  display: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0 0 0 0.2rem rgba(60, 54, 54, 0.25);
+}
+
+/* Footer */
+footer { 
+      min-height: 8em;
+      background-color: #b2a8a8; 
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+  }
+
+.footer-style {
+  display: flex;
+  justify-content: center;
+  gap: 15px;  
+  margin: 1em 1em;
+}
+
+.footer-style i {
+  font-size: 2em;
+  padding: 10px;
+  color: rgb(76, 62, 62);
+}
+
+.footer-text {
+  text-align: center;  
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;  
+}
+
+.footer-text {
+  text-align: center; /* 가운데 정렬 */
+  font-size: 14px;
+  color: #333;
+  padding: 10px 0;
+  }
+
+  .footer-text-top {
+      display: inline-block;
+  }
+
+  .footer-text-bottom {
+      display: inline-block;
+  }
+
+
+.address-style {
+  color: #cb1717a8; 
+  text-decoration: none;
+}
+.address-style:hover {
+  text-decoration: underline; 
+}
+
+/* Media */
+@media (max-width: 992px){ 
+  .favorite{
+      font-size: 80%;
+  }
+  
+  .favorite:hover{
+      font-size: 90%;
+  }
+
+  .navbar-toggler {
+      display: block; /* 768px 이하에서 햄버거 버튼 보이게 설정 */
+  }
+
+  .navbar {
+     height: 4em; /* 높이를 자동으로 설정 */
+  }
+ } 
+
+ @media (max-width: 768px) {
+  /* 모바일 화면에서 위 아래로 배치 */
+  .footer-text-top, .footer-text-bottom {
+      display: block; /* 각 요소를 블록으로 만들어 세로로 정렬 */
+  }
+  }
+
+ @media (max-width: 450px){
+  .footer-text-bottom {
+      display: none;
+  }
+
+  .footer-text-top{
+      margin-bottom: 2em;
+  }
+ }

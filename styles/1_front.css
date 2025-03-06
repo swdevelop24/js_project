@@ -1,0 +1,133 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Raleway', sans-serif;
+  color: green;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  font-size: 12px;
+  background-color: #27472A;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.sentence-and-btn{
+  /* border: 1px solid #000; */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sentence-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70%;
+  width: 100%;
+  position: relative;
+  /* border: 3px solid blue; */
+}
+
+.sentence-part h1 {
+  font-size: 4.5em;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  /* transform: translateY(-50%); */
+}
+.btn-part{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 10em;
+  position: relative;
+  /* border: 3px solid red; */
+  /* position: relative; */
+}
+
+.go-btn {
+  /* border: 3px solid purple; */
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D4B477;
+  text-align: center;
+  padding: 1em 50px;
+  border-radius: 60px;
+  width: fit-content;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 40px;
+  cursor: pointer;
+}
+.go-btn label{
+  cursor: pointer;
+}
+
+.intro-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  /* background-color: #27472a; */
+  z-index: 10;
+  /* border: 1px solid #000; */
+}
+
+.intro-header a {
+  /* border: 1px solid #000; */
+  padding-top: 10px;
+}
+
+.intro-header a span {
+  /* border: 1px solid #000; */
+  margin-left: 8px;
+  font-weight: bold; 
+  font-size: 20px; 
+  color: green;
+  font-size:1.5em;
+}
+
+.intro-header a img {
+  transform: translateX(30%);
+  /* transform: translateY(15%); */
+}
+
+.intro-logo {
+  height: 80px;
+  margin-top: 0;
+  margin-left: 1em;
+  text-align: left;
+  padding: 20px 0;
+}
+
+.intro-logo img {
+  line-height: 80px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 폰 버전에서 크기 조정 */
+@media screen and (max-width: 768px) {
+  .sentence-part h1 {
+    font-size: 6vw;
+  }
+  .go-btn {
+    font-size: 4vw; 
+    padding: 1em 30px; 
+  }
+}
