@@ -62,11 +62,23 @@
 
 
 
-    <main>
-
+      <main>
+        <div class="container contact-align-style">
+            <div class="contact-search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search news by title, park name, or abstract..." oninput="handleSearchInput(event)">
+                <select id="stateFilter" class="filter-input" onchange="handleStateFilterChange(event)">
+                  <option value="">States</option>
+                  <!-- 동적으로 추가되는 state 옵션들 -->
+                </select>
+              </div>
+    
+            <!-- News Board -->
+    
+            <div id="news-board">
+    
+            </div>
+          </div>
     </main>
-
-
     
 
     <footer>
