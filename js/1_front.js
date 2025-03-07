@@ -1,5 +1,5 @@
-const api_key = "KhMwNrzfaaiOCusKS29dHkZTKt0VylaAgePgxJpa";
-const API_URL = `https://developer.nps.gov/api/v1/parks?limit=10&api_key=${api_key}`;
+const apiKey = '';
+const API_URL = `https://developer.nps.gov/api/v1/parks?limit=10&api_key=${apiKey}`;
 
 let imageUrls = [];
 let currentIndex = 0;
@@ -29,6 +29,8 @@ function fadeToImage() {
     if (imageUrls.length > 0) {
         document.body.style.transition = "background-image 1s ease-in-out, background-color 1s ease-in-out";
         document.body.style.backgroundImage = `url(${imageUrls[currentIndex]})`;
+        document.body.style.backgroundImage = `url(${imageUrls[currentIndex]})`;
+        document.body.style.backgroundSize = "cover";
         document.body.style.backgroundColor = "transparent"; // 초록색 제거
         currentIndex = (currentIndex + 1) % imageUrls.length;
     }
