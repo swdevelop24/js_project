@@ -1,71 +1,142 @@
-body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-.park-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; max-width: 1200px; margin: auto; }
-.park-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); padding: 10px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; }
-.park-card:hover { transform: scale(1.05); }
-.park-card img { width: 100%; height: 150px; border-radius: 5px; object-fit: cover; }
-.favorite-icon { position: absolute; top: 10px; right: 10px; font-size: 24px; cursor: pointer; color: red; }
-.back-button, .clear-button { margin: 10px; padding: 10px; background: #333; color: white; border: none; cursor: pointer; border-radius: 5px; }
-.clear-button { background: red; }
-
-/* fav추가0306 */
-/*** 여기서 부터 네브바 & 푸터 관련 ***/ 
-body {
-  /* display: flex; */
-  /* flex-direction: column; */
-  min-height: 100vh;
+/* 기본 설정 */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-}
-
-/* 메인 추가 */
-main{
-  flex-grow: 1;
-  max-width: 1200px;
-}
-
-
-.nav-container {
-  /* padding:20px; /높이 조절 */
-  position: relative; /* 상대적 위치 지정 */
-  border-bottom: 3px solid rgba(168, 184, 76, 0.8); /* 네브밑 밑줄 추가 */
-  color: green;
-  min-height: 20%;
-  font-size: 1em;
-}
-.navbar-brand {
   display: flex;
-
+  flex-direction: column;
 }
 
-.nav-container span{
+/* 네비게이션 바 */
+.nav-container {
+  position: relative;
+  border-bottom: 3px solid rgba(168, 184, 76, 0.8);
+  color: green;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-container span {
   margin-left: 8px;
-   font-weight: bold; 
-   font-size: 20px; 
-   color: green;
-   font-size:1.5em;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: green;
 }
 
-.nav-item a{
+.nav-item a {
   color: rgb(99, 100, 89);
 }
 
-/*hamburger*/
-.fa-solid {
-  color: green;
+/* Main 콘텐츠를 유동적으로 확장 */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
-/*** footer 포지션 변경 ***/
+/* 검색 창 스타일 */
+.contact-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto 0 auto;
+}
+
+.search-input, .filter-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid rgba(168, 184, 76, 0.8);
+  transition: all 0.3s ease;
+  margin-right: 1em;
+}
+
+.search-input:focus, .filter-input:focus {
+  outline: none;
+  border-color: #6b8e23;
+  box-shadow: 0 8px 10px rgba(135, 230, 121, 0.1);
+}
+
+/* 뉴스 목록 스타일 */
+#news-board {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.news {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1em;
+  display: flex;
+  padding: 15px;
+  gap:30px;
+}
+
+.news:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-image-size {
+  max-width: 350px;
+  max-height: 500px;
+  padding: 0;
+}
+
+/* 뉴스 이미지 스타일 */
+.news img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-width:100%;
+}
+
+.news-content {
+  margin-left: 20px;
+}
+
+.news h3 {
+  font-size: 22px;
+  color: rgb(2, 50, 2);
+  font-weight: bold;
+}
+
+.news p {
+  font-size: 14px;
+  color: #555;
+}
+
+.news a {
+  font-size: 16px;
+  color: green;
+  text-decoration: none;
+}
+
+.news a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* 푸터를 항상 하단에 유지 */
 footer {
   width: 100%;
   padding: 20px 0;
   background-color: rgb(1, 43, 1);
   color: white;
   text-align: center;
-  position: relative;
-  bottom:0;
- }  
+  margin-top: auto;
+}
 
-/* 추가적인 스타일 */
 .footer-flex {
   display: flex;
   justify-content: center;
@@ -93,30 +164,6 @@ footer {
   text-decoration: none;
 }
 
-/* 하단 푸터가 항상 보이도록 설정 */
-.nav-search-results-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.footer-text {
-  text-align: center;
-  font-size: 14px;
-  color: rgb(172, 219, 187);
-  padding: 10px 0;
-}
-
-.footer-text-top {
-  display: inline-block;
-}
-
-.footer-text-bottom {
-  display: inline-block;
-}
-
-
 .footer-address-style {
   color: #cb1717a8;
   text-decoration: none;
@@ -126,84 +173,14 @@ footer {
   text-decoration: underline;
 }
 
-/* Media */
-
-
+/* 반응형 디자인 */
 @media (max-width: 768px) {
-
-  .footer-text-top,
-  .footer-text-bottom {
-    display: block;
-  }
-}
-
-@media (max-width: 450px) {
-  .footer-text-bottom {
-    display: none;
+  .footer-text-top, .footer-text-bottom {
+      display: block;
   }
 
-  .footer-text-top {
-    margin-bottom: 2em;
-  }
-}
-
-
-/* 추가 */
-.park-card h3 {
-  font-size: 1em;
-  margin-top: 10px;
-}
-h1 {
-  padding-top: 20px; 
-}
-.park-container {
-  padding-bottom: 80px;
-}
-/* 필터 컨테이너 */
-.filter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap; /* 반응형일 때 자동 줄바꿈 */
-  padding: 15px 10px; /* 위아래 패딩 추가 */
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* select와 버튼 크기 조정 */
-.filter-container select, 
-.filter-container .filter-btn {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  max-width: 180px; /* 크기 줄이기 */
-  flex: 1;
-}
-
-/* select 간격 추가 */
-.filter-container select {
-  margin: 0 5px; /* 좌우 간격 조정 */
-}
-.filter-btn {
-  cursor: pointer;
-}
-
-/* 📱 반응형 디자인 */
-@media (max-width: 1024px) {
-  .filter-container {
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-
-  .filter-container select, 
-  .filter-container .filter-btn {
-      max-width: 160px;
-  }
-  
-  .park-container {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .contact-search-container {
+      width: 80%;
   }
   .park-card {
     width: 70%;
@@ -211,34 +188,399 @@ h1 {
   }
 }
 
+@media (max-width: 450px) {
+  .footer-text-bottom {
+      display: none;
+  }
+
+  .footer-text-top {
+      margin-bottom: 2em;
+  }
+
+  .news {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .news img {
+      max-width: 100%;
+      height: auto;
+  }
+}
+
+
+
+
+
+
+/****새로운 파트 ***/
+body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+.park-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px; max-width: 1200px; margin: auto; }
+.park-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); padding: 10px; text-align: center; cursor: pointer; transition: 0.3s; position: relative; }
+.park-card:hover { transform: scale(1.05); }
+.park-card img { width: 100%; height: 150px; border-radius: 5px; object-fit: cover; }
+.favorite-icon { position: absolute; top: 10px; right: 10px; font-size: 24px; cursor: pointer; color: red; }
+.back-button, .clear-button { margin: 10px; padding: 10px; background: #333; color: white; border: none; cursor: pointer; border-radius: 5px; }
+
+/* fav추가0306 */
+/*** 여기서 부터 네브바 & 푸터 관련 ***/ 
+body {
+/* display: flex; */
+/* flex-direction: column; */
+min-height: 100vh;
+margin: 0;
+padding: 0;
+}
+
+/* 메인 추가 */
+main{
+flex-grow: 1;
+max-width: 1200px;
+}
+
+.navbar-brand {
+display: flex;
+}
+
+.nav-container span{
+margin-left: 8px;
+ font-weight: bold; 
+ font-size: 20px; 
+ color: green;
+ font-size:1.5em;
+}
+
+.nav-item a{
+color: rgb(99, 100, 89);
+}
+
+/*hamburger*/
+.fa-solid {
+color: green;
+}
+
+
+
+
+/**** 추가된 파트 ***/
+/* 네비게이션 바 수정 */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px; /* 좌우 패딩 추가 */
+  border-bottom: 3px solid rgba(168, 184, 76, 0.8);
+  background-color: white; /* 배경색 추가 */
+  position: relative; /* 다른 요소와 겹치지 않도록 설정 */
+  z-index: 1000; /* 다른 요소 위에 오도록 설정 */
+}
+
+/* 네비게이션 안에 있는 로고와 메뉴를 정렬 */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container span {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: green;
+  margin-left: 8px;
+}
+
+/* 네비게이션 아이템 (메뉴) 스타일 */
+.nav-item {
+  display: flex;
+  gap: 20px; /* 메뉴 아이템 간 간격 */
+}
+
+.nav-item a {
+  color: rgb(99, 100, 89);
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: green;
+  font-weight: bold;
+}
+
+/* 햄버거 아이콘 색상 */
+.fa-solid {
+  color: green;
+}
+
+/* 반응형 (작은 화면에서는 세로 정렬) */
+@media (max-width: 768px) {
+  .nav-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .nav-item {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+
+/*** 마지막 글자및 반응형 ***/
+/* 제목 (Favorite Parks)과 필터 컨테이너 간 여백 조정 */
+h1 {
+  margin-top: 50px;
+  margin-bottom: 20px; /* 아래 여백 추가 */
+  font-weight: 600;
+}
+
+/* 필터 컨테이너 스타일 */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* 아이템 간격 추가 */
+  margin-top: 20px; /* 제목과의 간격 조정 */
+  margin-bottom: 30px; /* 아래쪽 간격 추가 */
+}
+
+/* 필터 선택박스 (드롭다운) */
+#state {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid rgba(168, 184, 76, 0.8);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* 필터 버튼 */
+.filter-btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: darkgreen;
+}
+
+/* 뒤로 가기 및 전체 삭제 버튼 */
+.back-button, .clear-button {
+  margin: 15px;
+  padding: 12px 18px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.back-button {
+  background: #333;
+  color: white;
+}
+
+.clear-button {
+  background: red;
+  color: white;
+  width: 10%;
+}
+
+.back-button:hover {
+  background: #555;
+}
+
+.clear-button:hover {
+  background: darkred;
+}
+
+/* 카드 리스트 컨테이너 여백 조정 */
+
+
+/* 반응형 디자인 */
 @media (max-width: 768px) {
   .filter-container {
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
+      gap: 10px; /* 모바일에서는 간격 줄이기 */
   }
 
-  .filter-container select, 
-  .filter-container .filter-btn {
-      width: 70%;
-      max-width: none;
-  }
-  
   .park-container {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
+
+/* Go Back과 Clear All Favorites 버튼 크기 조정 */
+
+
+/* Go Back과 Clear All Favorites 버튼 크기 조정 */
+.back-button, .clear-button {
+  padding: 8px 14px; /* 버튼 내부 여백 줄이기 */
+  font-size: 14px; /* 글자 크기 줄이기 */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  width: auto; /* 버튼 폭 유지 */
+  min-width: 120px; /* 최소 너비 설정 */
+  max-width: 180px; /* 버튼이 너무 길어지지 않도록 제한 */
+}
+
+/* Clear All Favorites 버튼 스타일 */
+.clear-button {
+  background: red;
+  color: white;
+
+  font-size: 15px; /* 글자 크기 줄이기 */
+  padding: 10px 12px; /* 버튼 내부 여백 줄이기 (가로 길이 감소) */
+  min-width: 140px; /* 폭 유지하면서 옆으로 너무 길어지는 것 방지 */
+  max-width: 160px;
+  text-align: center;
+}
+
+.clear-button:hover {
+  background: darkred;
+}
+
+/* 반응형 디자인: 모바일에서도 적절한 크기 유지 */
+@media (max-width: 768px) {
+  .back-button, .clear-button {
+      width: auto; /* 모바일에서도 자동 조정 */
+      min-width: 130px; /* 모바일에서도 폭이 너무 작아지지 않도록 설정 */
+      max-width: 150px;
+  }
+}
+
+
+/* 공원 카드 안의 텍스트 크기 줄이기 */
+.park-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* 공원 카드 제목 (텍스트 크기 조정) */
+.park-card h3 {
+  font-size: 14px; /* 글자 크기 줄이기 */
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  line-height: 1.3;
+  word-wrap: break-word; /* 긴 단어가 있을 경우 자동 줄바꿈 */
+  overflow: hidden;
+}
+
+/* 반응형 디자인: 모바일에서 더 작게 조정 */
+@media (max-width: 768px) {
+  .park-card h3 {
+      font-size: 13px; /* 모바일에서 글자 크기 더 줄이기 */
+  }
+}
+
+
+/* 필터 컨테이너 스타일 */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* 아이템 간 간격 추가 */
+  margin-top: 20px; /* 위 요소와의 간격 조정 */
+  margin-bottom: 30px; /* 아래쪽 간격 추가 */
+}
+
+/* 필터 선택 박스 (State 드롭다운) */
+#state {
+  padding: 12px 16px; /* 높이와 내부 여백 조정 */
+  font-size: 16px; /* 글자 크기 조정 */
+  border: 2px solid rgba(168, 184, 76, 0.8);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  min-width: 160px; /* 최소 너비 설정 */
+  max-width: 200px;
+}
+
+/* 필터 버튼 (Search 버튼 크기 증가) */
+.filter-btn {
+  padding: 12px 18px; /* 버튼 크기 증가 */
+  font-size: 16px; /* 글자 크기 조정 */
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-width: 140px; /* 버튼 최소 너비 설정 */
+  max-width: 180px;
+  text-align: center;
+}
+
+/* 필터 버튼 호버 효과 */
+.filter-btn:hover {
+  background-color: darkgreen;
+}
+
+/* 반응형 디자인: 모바일에서 필터 크기 조정 */
+@media (max-width: 768px) {
   .filter-container {
-      gap: 10px;
+      flex-direction: column; /* 모바일에서는 세로 정렬 */
+      gap: 12px; /* 간격 줄이기 */
   }
 
-  button, select {
-      width: 90%;
+  #state {
+      width: 90%; /* 모바일에서 너비 확장 */
+      max-width: 250px;
   }
 
-  .park-container {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  .filter-btn {
+      width: 90%; /* 모바일에서 버튼 너비 확장 */
+      max-width: 250px;
   }
 }
+
+/* Go Back 버튼 크기 조정 */
+.back-button {
+  padding: 11px 30px; /* Clear All과 동일한 내부 여백 */
+  font-size: 14px; /* Clear All과 동일한 글자 크기 */
+  min-width: 120px; /* 버튼 최소 너비 맞추기 */
+}
+
+/* 버튼 컨테이너 위치 조정 */
+.button-container{
+  padding-top:100px;
+  position: relative;
+  margin:center;
+}
+
+/* No favorites 메시지를 오른쪽 정렬 */
+/* No favorites 메시지 정렬 */
+/* No favorites 메시지를 중앙 정렬 */
+.no-favorites {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  width: 100%; /* 전체 너비 사용 */
+  margin-top: 20px; /* 위쪽 간격 추가 */
+}
+
+/* 반응형 디자인: 모바일에서도 중앙 정렬 유지 */
+@media (min-width: 1024px) {
+  .no-favorites {
+      text-align: center;
+  }
+}
+
+

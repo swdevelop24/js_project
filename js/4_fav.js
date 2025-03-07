@@ -65,7 +65,11 @@ function displayFavorites() {
   container.innerHTML = '';
 
   if (filteredParks.length === 0) {
-    container.innerHTML = "<p>No favorite parks found.</p>";
+    container.innerHTML = `
+    <div class="no-favorites">
+        <p>No favorite parks found.</p>
+    </div>
+`;
     return;
   }
 
