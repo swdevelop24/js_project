@@ -1,0 +1,128 @@
+body {
+  /* display: flex; */
+  /* flex-direction: column; */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.nav-container {
+  /* padding:20px; /높이 조절 */
+  position: relative; /* 상대적 위치 지정 */
+  border-bottom: 3px solid rgba(168, 184, 76, 0.8); /* 네브밑 밑줄 추가 */
+  color: green;
+  min-height: 20%;
+  font-size: 1em;
+}
+
+.nav-container span{
+  margin-left: 8px;
+   font-weight: bold; 
+   font-size: 20px; 
+   color: green;
+   font-size:1.5em;
+}
+
+.nav-item a{
+  color: rgb(99, 100, 89);
+}
+
+/*hamburger*/
+.fa-solid {
+  color: green;
+}
+
+/*** footer 포지션 변경 ***/
+footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgb(1, 43, 1);
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+ }  
+
+/* 추가적인 스타일 */
+.footer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-style a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-style a:hover {
+  font-size: 180%;
+  color: green;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-text-top a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+/* 하단 푸터가 항상 보이도록 설정 */
+.nav-search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(172, 219, 187);
+  padding: 10px 0;
+}
+
+.footer-text-top {
+  display: inline-block;
+}
+
+.footer-text-bottom {
+  display: inline-block;
+}
+
+
+.footer-address-style {
+  color: #cb1717a8;
+  text-decoration: none;
+}
+
+.footer-address-style:hover {
+  text-decoration: underline;
+}
+
+/* Media */
+
+
+@media (max-width: 768px) {
+
+  .footer-text-top,
+  .footer-text-bottom {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-text-bottom {
+    display: none;
+  }
+
+  .footer-text-top {
+    margin-bottom: 2em;
+  }
+}

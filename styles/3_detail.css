@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+.detail-container { max-width: 800px; margin: auto; padding: 20px; text-align: left; }
+img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px; }
+.back-button { margin-top: 20px; padding: 10px; background: #333; color: white; border: none; cursor: pointer; border-radius: 5px; }
