@@ -1,5 +1,6 @@
 const API_KEY = 'cIsraDXQ585MS1XBmgDJEAdAT8ZOfyGl8JyKFqTl';
 const API_URL = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${API_KEY}`;
+const noImageURL = "https://demofree.sirv.com/nope-not-here.jpg?w=150"; // Correct URL
 
 let parksData = [];
 let filteredParks = [];
@@ -29,7 +30,18 @@ function populateFilters() {
 
 function populateSelect(id, items) {
     const select = document.getElementById(id);
-    select.innerHTML = '<option value="">Any</option>';
+    
+    let placeholderText = "";
+    if (id === "state") {
+        placeholderText = "State";
+    } else if (id === "activity") {
+        placeholderText = "Activity";
+    } else if (id === "parkType") {
+        placeholderText = "Park Type";
+    }
+
+    select.innerHTML = `<option value="">${placeholderText}</option>`; // Set unique placeholder text
+
     items.forEach(item => {
         if (item) {
             const option = document.createElement('option');
@@ -64,11 +76,15 @@ function displayParks() {
     let paginatedParks = filteredParks.slice(start, start + parksPerPage);
 
     paginatedParks.forEach(park => {
+        let parkImageURL = (park.images && park.images.length > 0) ? park.images[0].url : noImageURL;
+
         let isFavorite = favorites.includes(park.id);
+        let favoriteIcon = isFavorite ? '❤️' : '🤍';
+
         container.innerHTML += `
             <div class="park-card">
-                <span class="favorite-icon ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${park.id}')">${isFavorite ? '❤️' : '🤍'}</span>
-                <img src="${park.images.length ? park.images[0].url : 'https://via.placeholder.com/200x150'}" onclick="window.location.href='../pages/3_detail.html?id=${park.id}'">
+                <span class="favorite-icon ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${park.id}')">${favoriteIcon}</span>
+                <img src="${parkImageURL}" alt="Park Image" onclick="window.location.href='3_detail.html?id=${park.id}'" onerror="this.src='${noImageURL}';">
                 <h3>${park.fullName}</h3>
             </div>`;
     });

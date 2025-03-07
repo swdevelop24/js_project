@@ -86,7 +86,8 @@ const render = () => {
                 <div>
                     <h3>${news.title}</h3>
                     <p>${news.abstract}</p>
-                    <a href="${news.url}" target="_blank">Read more</a>
+                    <a href="${news.url}" target="_blank" rel="noopener noreferrer">Read more</a>
+
                 </div>
             </div>
         `;
