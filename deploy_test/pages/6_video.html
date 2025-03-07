@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Parks Video</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+        .video-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- <div class="title">Explore America's National Parks</div> -->
+        <div class="video-container">
+            <iframe 
+                id="videoPlayer"
+                src="https://www.youtube.com/embed/JZKjgzfJwbE?autoplay=1&controls=0&loop=1&playlist=JZKjgzfJwbE"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // YouTube 자동 재생 시 소리가 나게 하려면 유저 액션이 필요
+        document.addEventListener("click", function() {
+            var iframe = document.getElementById("videoPlayer");
+            var src = iframe.src;
+            iframe.src = src + "&mute=0";  // 클릭하면 음소거 해제
+        }, { once: true }); // 한 번만 실행되도록 설정
+    </script>
+
+</body>
+</html>
