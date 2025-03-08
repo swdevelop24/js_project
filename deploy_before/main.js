@@ -1,4 +1,4 @@
-const apiKey = 'V3LencjdH3KgPswvgnSyNImR5rw408UDz0LbjCX3';
+const apiKey = 'cIsraDXQ585MS1XBmgDJEAdAT8ZOfyGl8JyKFqTl';
 const API_URL = `https://developer.nps.gov/api/v1/parks?limit=10&api_key=${apiKey}`;
 
 let imageUrls = [];

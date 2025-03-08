@@ -109,14 +109,11 @@ main { flex-grow: 1; max-width: 1200px; width: 100%; margin: 0 auto; padding: 20
 .pagination {
     display: flex;
     justify-content: center;
+    text-wrap:nowrap;
     align-items: center;
     gap: 10px;
     margin: 20px 0;
     font-size: 16px;
-}
-.pagination span{
-  display:flex;
-  align-items: center;
 }
 .pagination button {
     padding: 8px 12px;
@@ -149,8 +146,6 @@ main { flex-grow: 1; max-width: 1200px; width: 100%; margin: 0 auto; padding: 20
 }
 
 @media (max-width: 768px) {
-
-
     .filter-container {
         flex-direction: column;
         align-items: center;
@@ -314,22 +309,6 @@ footer {
 }
 
 
-/* 📱 반응형 디자인 */
-@media (max-width: 768px) {
-  .pagination {
-      flex-direction: column; /* 버튼과 텍스트를 세로로 배치 */
-      gap: 5px; /* 요소 간격 줄이기 */
-  }
-
-  .pagination #pageNumber {
-      font-size: 14px;
-  }
-
-  .pagination button {
-      width: 100px; /* 모바일에서 버튼 크기 조정 */
-      font-size: 14px;
-  }
-}
 
 
 
