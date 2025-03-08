@@ -9,6 +9,16 @@ let currentPage = 1;
 const parksPerPage = 20;
 const maxPages = 7;
 
+document.addEventListener("DOMContentLoaded", function() {
+    // 기존 localStorage 값 불러오기
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    console.log("초기 즐겨찾기 목록:", favorites);
+
+    // Park 정보 불러오기
+    fetchParkDetails();
+});
+
+
 async function fetchParks() {
     try {
         const response = await fetch(API_URL);
