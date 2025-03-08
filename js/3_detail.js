@@ -7,6 +7,10 @@ const noImageURL = "https://demofree.sirv.com/nope-not-here.jpg?w=100"; // Corre
 const API_URL = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${API_KEY}`;
 const VISITOR_CENTERS_API_URL = `https://developer.nps.gov/api/v1/visitorcenters?api_key=${API_KEY}`;
 
+
+window.onbeforeunload = function() {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+};
 async function fetchParkDetails() {
   try {
       const response = await fetch(API_URL);

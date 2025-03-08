@@ -307,7 +307,39 @@ footer {
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 요소 수직 중앙 정렬 */
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+}
 
+.pagination #pageNumber {
+  display: inline-flex; /* 텍스트를 가로 정렬 */
+  align-items: center;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  font-weight: bold;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  height: 40px; /* 버튼 높이 고정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
 /* 📱 반응형 디자인 */
 @media (max-width: 768px) {
