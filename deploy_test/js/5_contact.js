@@ -1,4 +1,4 @@
-const API_KEY = "cIsraDXQ585MS1XBmgDJEAdAT8ZOfyGl8JyKFqTl";  // ✅ API 키를 상수로 분리
+const API_KEY = "x8Sh4Qqd1FrUbggVKGEUfKn8fUq20JCgqKvvMyRp";  
 const API_URL = `https://developer.nps.gov/api/v1/newsreleases?limit=300&api_key=${API_KEY}`;
 
 let newsList = [];

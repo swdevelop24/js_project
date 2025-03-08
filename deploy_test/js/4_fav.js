@@ -1,4 +1,4 @@
-const API_KEY = 'cIsraDXQ585MS1XBmgDJEAdAT8ZOfyGl8JyKFqTl';
+const API_KEY = '3luMBlVpDSU9s0coi6Lk3mrzkDqfBkaavcHrMOPH';
 const API_URL = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${API_KEY}`;
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 

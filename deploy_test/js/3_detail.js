@@ -1,4 +1,4 @@
-const API_KEY = "cIsraDXQ585MS1XBmgDJEAdAT8ZOfyGl8JyKFqTl"; // 여기에 NPS API 키 입력
+const API_KEY = "nlRF9tVTorEzudaCBo6CNLtdppFIcbNYLHr7ud9v"; // 여기에 NPS API 키 입력
 const urlParams = new URLSearchParams(window.location.search);
 const parkId = urlParams.get("id");
 const noImageURL = "https://demofree.sirv.com/nope-not-here.jpg?w=100"; // Correct Image Placeholder
