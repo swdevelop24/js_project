@@ -89,7 +89,7 @@ function displayParks() {
             </div>`;
     });
 
-    document.getElementById('pageNumber').textContent = `${currentPage} of ${totalPages}`;
+    document.getElementById('pageNumber').textContent = ` ${currentPage} of ${totalPages}`;
     document.getElementById('prevPage').disabled = currentPage === 1;
     document.getElementById('nextPage').disabled = currentPage >= totalPages;
 }
