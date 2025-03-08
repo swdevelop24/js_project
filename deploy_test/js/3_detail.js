@@ -11,6 +11,12 @@ const VISITOR_CENTERS_API_URL = `https://developer.nps.gov/api/v1/visitorcenters
 window.onbeforeunload = function() {
     localStorage.setItem('favorites', JSON.stringify(favorites));
 };
+
+window.addEventListener("pageshow", function() {
+    console.log("페이지 다시 로드됨!");
+    updateFavoriteIcon(parkId);
+});
+
 async function fetchParkDetails() {
   try {
       const response = await fetch(API_URL);
