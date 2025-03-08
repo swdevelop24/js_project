@@ -67,36 +67,7 @@ function filterParks() {
     displayParks();
 }
 
-// function displayParks() {
-//     const container = document.getElementById('parkContainer');
-//     container.innerHTML = '';
-
-//     let totalPages = Math.min(maxPages, Math.ceil(filteredParks.length / parksPerPage));
-//     let start = (currentPage - 1) * parksPerPage;
-//     let paginatedParks = filteredParks.slice(start, start + parksPerPage);
-
-//     paginatedParks.forEach(park => {
-//         let parkImageURL = (park.images && park.images.length > 0) ? park.images[0].url : noImageURL;
-
-//         let isFavorite = favorites.includes(park.id);
-//         let favoriteIcon = isFavorite ? '❤️' : '🤍';
-
-//         container.innerHTML += `
-//             <div class="park-card">
-//                 <span class="favorite-icon ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(event, '${park.id}')">${favoriteIcon}</span>
-//                 <img src="${parkImageURL}" alt="Park Image" onclick="window.location.href='3_detail.html?id=${park.id}'" onerror="this.src='${noImageURL}';">
-//                 <h3>${park.fullName}</h3>
-//             </div>`;
-//     });
-
-//     document.getElementById('pageNumber').textContent = ` ${currentPage} of ${totalPages}`;
-//     document.getElementById('prevPage').disabled = currentPage === 1;
-//     document.getElementById('nextPage').disabled = currentPage >= totalPages;
-// }
-
 function displayParks() {
-    favorites = JSON.parse(localStorage.getItem('favorites')) || []; // 최신 상태 유지
-
     const container = document.getElementById('parkContainer');
     container.innerHTML = '';
 
@@ -118,7 +89,7 @@ function displayParks() {
             </div>`;
     });
 
-    document.getElementById('pageNumber').textContent = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById('pageNumber').textContent = ` ${currentPage} of ${totalPages}`;
     document.getElementById('prevPage').disabled = currentPage === 1;
     document.getElementById('nextPage').disabled = currentPage >= totalPages;
 }

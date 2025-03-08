@@ -8,9 +8,19 @@ const API_URL = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${API_
 const VISITOR_CENTERS_API_URL = `https://developer.nps.gov/api/v1/visitorcenters?api_key=${API_KEY}`;
 
 
-window.onbeforeunload = function() {
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+window.addEventListener("beforeunload", function() {
     localStorage.setItem('favorites', JSON.stringify(favorites));
-};
+    console.log("저장됨:", localStorage.getItem('favorites'));
+});
+
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === "hidden") {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+});
+
 
 async function fetchParkDetails() {
   try {
@@ -61,7 +71,7 @@ function goBack() {
 }
 
 
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+// let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 function toggleFavorite(parkId) {
   let index = favorites.indexOf(parkId);
